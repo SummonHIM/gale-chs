@@ -19,35 +19,35 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: clone gale
+      - name: Checkout Kesomannen/gale
         uses: actions/checkout@v4
         with:
-          repository: Kesomannen/thunderstore-cli
+          repository: Kesomannen/gale
           ref: '1.2.2'
           path: gale
 
-      - name: replace strings
+      - name: Replace strings
         run: |
           chmod +x replace.sh
           ./replace.sh
 
-      - name: setup node
+      - name: Setup node
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
 
-      - name: install Rust stable
+      - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
 
-      - name: install dependencies (ubuntu only)
+      - name: Install dependencies (ubuntu only)
         if: matrix.platform == 'ubuntu-22.04'
         run: |
           sudo apt-get update
           sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
 
-      - name: install frontend dependencies
+      - name: Install frontend dependencies
         run: npm install
 
       - uses: tauri-apps/tauri-action@v0
@@ -63,7 +63,7 @@ jobs:
           args: ${{ matrix.args }}
           projectPath: 'gale'
 
-      - name: update latest.json github gist
+      - name: Update gale-latest.json to github gist
         uses: exuanbo/actions-deploy-gist@v1
         if: matrix.platform == 'windows-latest'
         with:
