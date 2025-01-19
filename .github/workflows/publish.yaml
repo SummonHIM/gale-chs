@@ -66,6 +66,9 @@ jobs:
           args: ${{ matrix.args }}
           projectPath: 'gale'
 
+      - name: Replace latest.json's github link to ghproxy link
+        run: bash -c 'find /path/to/root -type f -name "latest.json" -exec sed -i 's|https://github.com|https://ghfast.top/https://github.com|g' {} +'
+
       - name: Update gale-latest.json to github gist
         uses: exuanbo/actions-deploy-gist@v1
         if: matrix.platform == 'windows-latest'

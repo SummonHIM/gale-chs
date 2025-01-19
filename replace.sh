@@ -278,4 +278,4 @@ replace_text "gale/src/routes/+page.svelte" "%s depends on the following disable
 
 # replace update keys & url
 replace_text "gale/src-tauri/tauri.conf.json" "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDNDRkNCMzE4NDIyOTQ1QjQKUldTMFJTbENHTFA4UE9Fd1RocjRDRm9uVmdiUlUxdmw1ZEwvaXRJZW45VFVSeXozUkYxaUFmZEsK" "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEFFMzRDNkRBRjQyM0YwNDUKUldSRjhDUDAyc1kwcnVCOUpnd3hIUkVEU2l5TXRlRm1Uc0NQWFZMQjhZa2ZJRVlkaXk5NGpaSWMK"
-replace_text "gale/src-tauri/tauri.conf.json" "https://gist.githubusercontent.com/Kesomannen/58b4f08009e7b7b5baaea253ebccb94d/raw/" "https://ghproxy.summonhim.top/https://gist.github.com/SummonHIM/48ae7ddf5b7bd612ed2108b2f94b4eb9/raw/gale-latest.json"
+replace_text "gale/src-tauri/tauri.conf.json" "https://gist.githubusercontent.com/Kesomannen/58b4f08009e7b7b5baaea253ebccb94d/raw/" "https://ghfast.top/https://gist.github.com/SummonHIM/48ae7ddf5b7bd612ed2108b2f94b4eb9/raw/gale-latest.json"
