@@ -18,7 +18,7 @@ replace_text() {
         return 1
     fi
 
-    if $null_data; then
+    if [[ $null_data -eq 1 ]]; then
         options="-z $options"
     fi
 
@@ -32,13 +32,13 @@ replace_text() {
 }
 
 replace_text "gale/src/lib/components/ConfirmPopup.svelte" "}}>Cancel</BigButton" "}}>取消</BigButton"
-replace_text "gale/src/lib/components/GameSelection.svelte" "Search for games..." "搜索新游戏…"
-replace_text "gale/src/lib/components/GameSelection.svelte" "No games found" "未找到该游戏"
-replace_text "gale/src/lib/components/GameSelection.svelte" "Your game missing? If the game is new on Thunderstore there's a chance we have yet to add it." "没找到你想玩的游戏？如果这个游戏刚刚发布，则 Thunderstore 可能还没有添加它。"
-replace_text "gale/src/lib/components/GameSelection.svelte" "If you can find it on" "如果你能在"
-replace_text "gale/src/lib/components/GameSelection.svelte" "but not here, please message us on" "上找到但这里没有列出来，请在"
-replace_text "gale/src/lib/components/GameSelection.svelte" "or open an issue on" "上联系我们或在我们的"
-replace_text "gale/src/lib/components/GameSelection.svelte" "our Github" "Github 上提交新 Issue"
+replace_text "gale/src/lib/menu/GameSelection.svelte" "Search for games..." "搜索新游戏…"
+replace_text "gale/src/lib/menu/GameSelection.svelte" "No games found" "未找到该游戏"
+replace_text "gale/src/lib/menu/GameSelection.svelte" "Your game missing? If the game is new on Thunderstore there's a chance we have yet to add" "没找到你想玩的游戏？如果这个游戏刚刚发布，则 Thunderstore 可能还没有添加它。"
+replace_text "gale/src/lib/menu/GameSelection.svelte" "it. If you can find it on" "如果你能在"
+replace_text "gale/src/lib/menu/GameSelection.svelte" "but not here, please message us on" "上找到但这里没有列出来，请在"
+replace_text "gale/src/lib/menu/GameSelection.svelte" "or open an issue on" "上联系我们或在我们的"
+replace_text "gale/src/lib/menu/GameSelection.svelte" "our Github" "Github 上提交新 Issue"
 replace_text "gale/src/lib/components/PathField.svelte" "Not set" "未设置"
 replace_text "gale/src/lib/config/ConfigEntryField.svelte" "Default: " "默认："
 replace_text "gale/src/lib/config/ConfigEntryField.svelte" "Range: " "范围："
@@ -46,7 +46,7 @@ replace_text "gale/src/lib/config/ConfigFileEditor.svelte" "Created by" "创建�
 replace_text "gale/src/lib/import/ExportCodePopup.svelte" "Export as code" "导出为代码"
 replace_text "gale/src/lib/import/ExportCodePopup.svelte" "Exporting \(.\+\) as code..." "将 \1 导出为代码…"
 replace_text "gale/src/lib/import/ExportCodePopup.svelte" "Export complete! The code has been copied to your clipboard:" "导出完成！代码已经复制到你的剪切板中："
-replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "Are you sure you want to override \(.\+\)" "真的确定要覆盖 \1"
+replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "Are you sure you want to override \(.\+\)?" "真的确定要覆盖 \1？"
 replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "Import profile" "导入整合包"
 replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "Create new" "创建新整合包"
 replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "Overwrite existing" "覆盖现有的"
@@ -79,18 +79,19 @@ replace_text "gale/src/lib/import/ImportR2Popup.svelte" ">Cancel</BigButton>" ">
 replace_text "gale/src/lib/import/ImportR2Popup.svelte" ">Import</BigButton>" ">导入</BigButton>"
 replace_text "gale/src/lib/menu/AboutPopup.svelte" "Version {version}" "版本 {version}"
 replace_text "gale/src/lib/menu/AboutPopup.svelte" "Changelog</Link>" "变更日志</Link>"
+replace_text "gale/src/lib/menu/AboutPopup.svelte" "Privacy Policy" "隐私政策"
 replace_text "gale/src/lib/menu/AboutPopup.svelte" "Check for updates" "检查更新"
 replace_text "gale/src/lib/menu/AboutPopup.svelte" "Checking for updates..." "正在检查更新…"
 replace_text "gale/src/lib/menu/AboutPopup.svelte" "You are running the latest version" "当前已为最新版本"
 replace_text "gale/src/lib/menu/AboutPopup.svelte" "New version available:" "新版本可用："
-replace_text "gale/src/lib/menu/Contextbar.svelte" "Are you sure you want to delete \(.\+\)" "你真的确定要删除 \1"
+replace_text "gale/src/lib/menu/Contextbar.svelte" "Are you sure you want to delete \(.\+\)?" "你真的确定要删除 \1？"
 replace_text "gale/src/lib/menu/Contextbar.svelte" "Launch game" "启动游戏"
 replace_text "gale/src/lib/menu/Contextbar.svelte" "Loading..." "加载中…"
 replace_text "gale/src/lib/menu/Contextbar.svelte" "New profile" "创建整合包"
 replace_text "gale/src/lib/menu/Contextbar.svelte" 'title="Launching' 'title="正在启动'
 replace_text "gale/src/lib/menu/Contextbar.svelte" "If the game is taking a while to start, it's probably because Steam is starting up." "如果游戏迟迟未启动，则可能是 Steam 正在启动。"
 replace_text "gale/src/lib/menu/Contextbar.svelte" "Select game to mod" "选择需要管理模组的游戏"
-replace_text "gale/src/lib/menu/DependantsPopup.svelte" "{verb}\n\(\t\+\){name} only" "仅{verb} {name}" true
+replace_text "gale/src/lib/menu/DependantsPopup.svelte" "{verb}\n\(\t\+\){name} only" "仅{verb} {name}" 1
 replace_text "gale/src/lib/menu/DependantsPopup.svelte" "{verb} all" "{verb} 全部"
 replace_text "gale/src/lib/menu/Menubar.svelte" "Select the mod file to import" "选择欲导入的模组文件"
 replace_text "gale/src/lib/menu/Menubar.svelte" "Dll or zip" "Dll 或 zip"
@@ -137,7 +138,7 @@ replace_text "gale/src/lib/menu/Menubar.svelte" "{capitalize(profileOperation)} 
 replace_text "gale/src/lib/menu/Menubar.svelte" "Enter a name for the duplicated profile:" "为欲复制的整合包起一个新名字："
 replace_text "gale/src/lib/menu/Menubar.svelte" "Enter a new name for the profile:" "为整合包起一个新名字："
 replace_text "gale/src/lib/menu/Menubar.svelte" "Enter name..." "请输入名字…"
-replace_text "gale/src/lib/menu/Menubar.svelte" "This process might take up to a minute depending on the size of the profile, please be\n\(\t\+\)patient." "该过程花费的时间取决于此整合包的大小，请耐心等待。" true
+replace_text "gale/src/lib/menu/Menubar.svelte" "This process might take up to a minute depending on the size of the profile, please be\n\(\t\+\)patient." "该过程花费的时间取决于此整合包的大小，请耐心等待。" 1
 replace_text "gale/src/lib/menu/Menubar.svelte" ">Cancel</BigButton>" ">取消</BigButton>"
 replace_text "gale/src/lib/menu/NewProfilePopup.svelte" "Create new profile" "创建新整合包"
 replace_text "gale/src/lib/menu/NewProfilePopup.svelte" "Choose a name for the new profile:" "为新整合包起一个新名字："
@@ -149,7 +150,7 @@ replace_text "gale/src/lib/menu/Updater.svelte" "Gale will now restart in order 
 replace_text "gale/src/lib/menu/Updater.svelte" "Downloading update..." "正在下载更新…"
 replace_text "gale/src/lib/menu/Updater.svelte" "Update available" "更新可用"
 replace_text "gale/src/lib/menu/Updater.svelte" "App update available" "有可用的应用更新"
-replace_text "gale/src/lib/menu/Updater.svelte" "Version \(.\+\) of Gale is available - you have \(.\+\)" "Gale 已发布新版本 \1 - 当前版本为 \2"
+replace_text "gale/src/lib/menu/Updater.svelte" "Version \(.\+\) of Gale is available - you have \(.\+\)." "Gale 已发布新版本 \1 - 当前版本为 \2。"
 replace_text "gale/src/lib/menu/Updater.svelte" "There is an update available for Gale." "Gale 有新版本更新可用。"
 replace_text "gale/src/lib/menu/Updater.svelte" "The update will be downloaded in the background, then the app will restart to apply it." "更新将会在后台自动下载和安装，然后程序将会重启来应用此次更新。"
 replace_text "gale/src/lib/menu/Updater.svelte" "Would you like to install it?" "请问要继续更新吗？"
@@ -157,7 +158,7 @@ replace_text "gale/src/lib/menu/Updater.svelte" ">Install</BigButton>" ">安装<
 replace_text "gale/src/lib/menu/WelcomePopup.svelte" "Welcome to Gale!" "欢迎使用 Gale！"
 replace_text "gale/src/lib/menu/WelcomePopup.svelte" "To get started, select a game to mod:" "使用 Gale 第一步，选择一个游戏来管理模组："
 replace_text "gale/src/lib/menu/WelcomePopup.svelte" "You can choose to automatically transfer profiles from another mod manager to Gale." "你可以选择从其他模组管理器自动导入整合包至 Gale。"
-replace_text "gale/src/lib/menu/WelcomePopup.svelte" "The process may take a couple of minutes, depending on how many mods and profiles there are\n\(\t\+\)to import." "该过程可能需要数分钟，具体取决于要导入的模组和整合包的数量。配置与缓存的模组将同样被导入。" true
+replace_text "gale/src/lib/menu/WelcomePopup.svelte" "The process may take a couple of minutes, depending on how many mods and profiles there are\n\(\t\+\)to import." "该过程可能需要数分钟，具体取决于要导入的模组和整合包的数量。配置与缓存的模组将同样被导入。" 1
 replace_text "gale/src/lib/menu/WelcomePopup.svelte" "You can always import profiles later by going to <b>Import \&gt; ...from r2modman</b>." "你也可以等会在 <b>导入 \&gt; 从其他平台导入模组</b> 里自动导入整合包。"
 replace_text "gale/src/lib/menu/WelcomePopup.svelte" ">Back</BigButton" ">返回</BigButton"
 replace_text "gale/src/lib/menu/WelcomePopup.svelte" ">Skip</BigButton>" ">跳过</BigButton>"
@@ -209,19 +210,19 @@ replace_text "gale/src/lib/modlist/UpdateAllBanner.svelte" "Update mods" "更新
 replace_text "gale/src/lib/prefs/AccentColorPref.svelte" "Accent color" "强调色"
 replace_text "gale/src/lib/prefs/AccentColorPref.svelte" "Changes the color of highlighted elements, such as buttons and checkboxes." "更改突出显示元素（例如按钮和复选框）的颜色。"
 replace_text "gale/src/lib/prefs/ApiKeyPref.svelte" 'text="Thunderstore API token"' 'text="Thunderstore API 令牌"'
-replace_text "gale/src/lib/prefs/ApiKeyPref.svelte" "Thunderstore API token to use for modpack publishing. Once this is set, you will <b>not</b> be able\n\(\t\+\)to view the token again." "用于发布整合包的 Thunderstore API 密钥。设置完后，你将<b>无法</b>再次查看该密钥。" true
+replace_text "gale/src/lib/prefs/ApiKeyPref.svelte" "Thunderstore API token to use for modpack publishing. Once this is set, you will <b>not</b> be able\n\(\t\+\)to view the token again." "用于发布整合包的 Thunderstore API 密钥。设置完后，你将<b>无法</b>再次查看该密钥。" 1
 replace_text "gale/src/lib/prefs/CustomArgsPref.svelte" "Set custom launch arguments" "设置自定义启动参数"
 replace_text "gale/src/lib/prefs/CustomArgsPref.svelte" "Allows you to add custom arguments to the launch command. Depending on <b>Launch mode</b>," "允许您为启动命令添加自定义参数。根据<b>启动模式</b>，"
 replace_text "gale/src/lib/prefs/CustomArgsPref.svelte" "these are either ran against the game or steam executable." "这些参数将针对游戏或 Steam 可执行文件运行。"
-replace_text "gale/src/lib/prefs/CustomArgsPref.svelte" "Only pass one argument per entry, so instead of <code>--foo value</code>, pass\n\(\t\+\)<code>--foo</code>\n\(\t\+\)and <code>value</code> separately." "每个条目只传递一个参数，比如说 <code>--foo value</code>，请将 <code>--foo</code> 和 <code>value</code> 分开填写。" true
+replace_text "gale/src/lib/prefs/CustomArgsPref.svelte" "Only pass one argument per entry, so instead of <code>--foo value</code>, pass\n\(\t\+\)<code>--foo</code>\n\(\t\+\)and <code>value</code> separately." "每个条目只传递一个参数，比如说 <code>--foo value</code>，请将 <code>--foo</code> 和 <code>value</code> 分开填写。" 1
 replace_text "gale/src/lib/prefs/LaunchModePref.svelte" "Launch mode" "启动模式"
 replace_text "gale/src/lib/prefs/LaunchModePref.svelte" "Determines how the game is launched." "确定游戏的启动方式。"
 replace_text "gale/src/lib/prefs/LaunchModePref.svelte" "Launches through the specified platform." "从游戏平台中启动游戏"
-replace_text "gale/src/lib/prefs/LaunchModePref.svelte" "Launches the game directly from the executable. Allows you to launch multiple instances\n\(\t\+\)at once." "直接从游戏的可执行文件启动游戏。这将允许一次性启动多个游戏进程。" true
+replace_text "gale/src/lib/prefs/LaunchModePref.svelte" "Launches the game directly from the executable. Allows you to launch multiple instances\n\(\t\+\)at once." "直接从游戏的可执行文件启动游戏。这将允许一次性启动多个游戏进程。" 1
 replace_text "gale/src/lib/prefs/LaunchModePref.svelte" "Number of instances" "进程数量上限"
 replace_text "gale/src/lib/prefs/LaunchModePref.svelte" "How many instances of the game to launch at once. Only available in direct mode." "设置一次性启动多个游戏进程的数量上限。仅在直接启动模式有效。"
 replace_text "gale/src/lib/prefs/LaunchModePref.svelte" "Interval between launches" "游戏启动间隔"
-replace_text "gale/src/lib/prefs/LaunchModePref.svelte" "How many seconds to wait between launching each instance. Only applicable in direct mode with\n\(\t\+\)multiple instances." "启动各个游戏进程之间需要等待时间。仅在直接启动多个进程模式有效。" true
+replace_text "gale/src/lib/prefs/LaunchModePref.svelte" "How many seconds to wait between launching each instance. Only applicable in direct mode with\n\(\t\+\)multiple instances." "启动各个游戏进程之间需要等待时间。仅在直接启动多个进程模式有效。" 1
 replace_text "gale/src/lib/prefs/PathPref.svelte" "'Select '" "'选择 '"
 replace_text "gale/src/lib/prefs/PlatformPref.svelte" 'text="Platform"' 'text="平台"'
 replace_text "gale/src/lib/prefs/PlatformPref.svelte" "The platform where your game is installed." "游戏所安装的平台。"
@@ -238,7 +239,7 @@ replace_text "gale/src/routes/browse/+page.svelte" '<Icon icon="mdi:download" cl
 replace_text "gale/src/routes/config/+page.svelte" "Loading config..." "正在加载配置文件…"
 replace_text "gale/src/routes/config/+page.svelte" "No config files found" "未找到配置文件"
 replace_text "gale/src/routes/config/+page.svelte" "Search for files..." "搜索文件…"
-replace_text "gale/src/routes/config/+page.svelte" "This file is in an unsupported format. Please open it in an external program to make\n\(\t\+\)changes." "不支持这种格式的文件。请在外部编辑器中修改。" true
+replace_text "gale/src/routes/config/+page.svelte" "This file is in an unsupported format. Please open it in an external program to make\n\(\t\+\)changes." "不支持这种格式的文件。请在外部编辑器中修改。" 1
 replace_text "gale/src/routes/config/+page.svelte" "Open in external program" "在外部编辑器中打开"
 replace_text "gale/src/routes/config/+page.svelte" "An error occured while reading this config file:" "读取该配置文件时出错："
 replace_text "gale/src/routes/config/+page.svelte" "Select a config file to start editing" "选择一个配置文件来编辑"
@@ -275,6 +276,7 @@ replace_text "gale/src/routes/+page.svelte" "Update to" "更新到"
 replace_text "gale/src/routes/+page.svelte" "The following {unknownMods.length === 1 ? 'mod' : 'mods'} could not be found:" "无法找到以下模组："
 replace_text "gale/src/routes/+page.svelte" "Uninstall them?" "全部卸载？"
 replace_text "gale/src/routes/+page.svelte" "No dependants found" "未找到依赖"
+replace_text "gale/src/routes/+page.svelte" 'title="Dependants of \(.\+\)"' 'title="\1 的依赖关系"'
 replace_text "gale/src/routes/+page.svelte" "Confirm uninstallation" "确认卸载"
 replace_text "gale/src/routes/+page.svelte" 'verb="Uninstall"' 'verb="卸载"'
 replace_text "gale/src/routes/+page.svelte" "The following mods depend on %s and will likely not work if it is uninstalled:" "以下模组依赖于 %s，如果它被卸载则以下模组可能无法正常工作:"
