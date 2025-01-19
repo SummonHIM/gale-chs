@@ -64,6 +64,7 @@ replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "Only enable this f
 replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "}}>Cancel</BigButton" "}}>取消</BigButton"
 replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "{:else}\n\(\t\+\)Import" "{:else}\n\1导入"
 replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "Enter import code..." "请输入导入代码…"
+replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "Import</BigButton>" "导入</BigButton>"
 replace_text "gale/src/lib/import/ImportR2Flow.svelte" 'label="Data directory"' 'label="数据文件夹"'
 replace_text "gale/src/lib/import/ImportR2Flow.svelte" "The data directory of your r2modman/TMM installation." "r2modman/TMM 所安装的数据文件夹。"
 replace_text "gale/src/lib/import/ImportR2Flow.svelte" "Loading..." "加载中…"
@@ -76,10 +77,17 @@ replace_text "gale/src/lib/import/ImportR2Popup.svelte" "Existing profiles with 
 replace_text "gale/src/lib/import/ImportR2Popup.svelte" "Do not close Gale while the import is in progress." "导入过程中请不要关闭 Gale。 "
 replace_text "gale/src/lib/import/ImportR2Popup.svelte" ">Cancel</BigButton>" ">取消</BigButton>"
 replace_text "gale/src/lib/import/ImportR2Popup.svelte" ">Import</BigButton>" ">导入</BigButton>"
+replace_text "gale/src/lib/menu/AboutPopup.svelte" "Version {version}" "版本 {version}"
+replace_text "gale/src/lib/menu/AboutPopup.svelte" "Changelog</Link>" "变更日志</Link>"
+replace_text "gale/src/lib/menu/AboutPopup.svelte" "Check for updates" "检查更新"
+replace_text "gale/src/lib/menu/AboutPopup.svelte" "Checking for updates..." "正在检查更新…"
+replace_text "gale/src/lib/menu/AboutPopup.svelte" "You are running the latest version" "当前已为最新版本"
+replace_text "gale/src/lib/menu/AboutPopup.svelte" "New version available:" "新版本可用："
 replace_text "gale/src/lib/menu/Contextbar.svelte" "Are you sure you want to delete \(.\+\)" "你真的确定要删除 \1"
 replace_text "gale/src/lib/menu/Contextbar.svelte" "Launch game" "启动游戏"
 replace_text "gale/src/lib/menu/Contextbar.svelte" "Loading..." "加载中…"
 replace_text "gale/src/lib/menu/Contextbar.svelte" "New profile" "创建整合包"
+replace_text "gale/src/lib/menu/Contextbar.svelte" 'title="Launching' 'title="正在启动'
 replace_text "gale/src/lib/menu/Contextbar.svelte" "If the game is taking a while to start, it's probably because Steam is starting up." "如果游戏迟迟未启动，则可能是 Steam 正在启动。"
 replace_text "gale/src/lib/menu/Contextbar.svelte" "Select game to mod" "选择需要管理模组的游戏"
 replace_text "gale/src/lib/menu/DependantsPopup.svelte" "{verb}\n\(\t\+\){name} only" "仅{verb} {name}" true
@@ -98,6 +106,7 @@ replace_text "gale/src/lib/menu/Menubar.svelte" "Open game log" "打开游戏日
 replace_text "gale/src/lib/menu/Menubar.svelte" "Open Gale log" "打开 Gale 日志"
 replace_text "gale/src/lib/menu/Menubar.svelte" "Clear mod cache" "清理模组缓存"
 replace_text "gale/src/lib/menu/Menubar.svelte" "Clear unused mod cache" "清除未使用的模组缓存"
+replace_text "gale/src/lib/menu/Menubar.svelte" "Fetch mods" "获取模组"
 replace_text "gale/src/lib/menu/Menubar.svelte" 'label="Profile"' 'label="整合包"'
 replace_text "gale/src/lib/menu/Menubar.svelte" "Create new profile" "创建新整合包"
 replace_text "gale/src/lib/menu/Menubar.svelte" "Rename active profile" "重命名当前整合包"
