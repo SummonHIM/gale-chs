@@ -52,10 +52,6 @@ jobs:
           cd gale
           npm install
 
-      - name: Set version code
-        run: |
-          bash -c 'sed -i "s/\(\"version\": \"[0-9]\+\.[0-9]\+\.[0-9]\+\)/\1+chs${{ github.run_number }}/" gale/src-tauri/tauri.conf.json'
-
       - uses: tauri-apps/tauri-action@v0
         id: tauri
         env:
@@ -70,6 +66,7 @@ jobs:
           projectPath: 'gale'
 
       - name: Replace latest.json's github link to ghproxy link
+        if: matrix.platform == 'windows-latest'
         run: bash -c "find . -type f -name 'latest.json' -exec sed -i 's|https://github.com|https://ghfast.top/https://github.com|g' {} +"
 
       - name: Update gale-latest.json to github gist
