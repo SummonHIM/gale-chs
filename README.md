@@ -6,6 +6,11 @@ Gale 中文版。使用脚本翻译。
 ## 下载
 [GitHub Release](https://github.com/SummonHIM/gale-chs/releases/latest)
 
+## 说明
+汉化可能并不会及时更新。如果上游已经更新。请发送 Issue 提醒我。
+
+汉化内容可能有疏漏，且 Rust 部分尚未汉化，欢迎 PR。
+
 ## 感谢
 [Kesomannen/gale](https://github.com/Kesomannen/gale)
 
