@@ -61,7 +61,7 @@ jobs:
         with:
           tagName: __VERSION__+chs${{ github.run_number }} # the action automatically replaces \_\_VERSION\_\_ with the app version.
           releaseName: "Release __VERSION__+chs${{ github.run_number }}"
-          releaseDraft: true
+          releaseDraft: false
           args: ${{ matrix.args }}
           projectPath: 'gale'
 
