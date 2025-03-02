@@ -31,10 +31,10 @@ replace_text() {
     fi
 }
 
-cp -r merge/* gale || exit 1
+cp -vr merge/* gale || exit 1
 
 replace_text "gale/src/lib/components/ConfirmPopup.svelte" "}}>Cancel</BigButton" "}}>取消</BigButton"
-replace_text "gale/src/lib/components/Dropdown.svelte" "import { dropTransition } from '\$lib/transitions';" "import { dropTransition } from '\$lib/transitions';\n\timport { translate_dropdowns } from '\$lib/chinese';"
+replace_text "gale/src/lib/components/Dropdown.svelte" "from '\$lib/transitions';" "from '\$lib/transitions';\n\timport { translate_dropdowns } from '\$lib/chinese';"
 replace_text "gale/src/lib/components/Dropdown.svelte" "getLabel(item)" "translate_dropdowns(getLabel(item))"
 replace_text "gale/src/lib/components/Dropdown.svelte" "getLabel(selected as T)" "translate_dropdowns(getLabel(selected as T))"
 replace_text "gale/src/lib/menu/GameSelection.svelte" "Search for games..." "搜索新游戏…"
@@ -229,10 +229,10 @@ replace_text "gale/src/lib/prefs/ApiKeyPopup.svelte" '5. Click <code>Add service
 replace_text "gale/src/lib/prefs/ApiKeyPopup.svelte" "6. Once you submit, the API token will be displayed. Make sure you copy and paste it here,\n\(\t\+\)since you won't be able to see it once you navigate away from the page." "6. 提交后，API 令牌（Token）将会显示出来。请确保将其复制并粘贴到此处，因为一旦离开页面，您将无法再次查看该令牌。" 1
 replace_text "gale/src/lib/prefs/ApiKeyPopup.svelte" "Do not share the token with anyone else, as it gives power to update, publish or delete\n\(\t\+\)packages in your name!" "请勿与他人分享该令牌，因为它赋予了更新、发布或删除以您名义上传的软件包的权限！" 1
 replace_text "gale/src/lib/prefs/ApiKeyPopup.svelte" "Submit" "提交"
-replace_text "gale/src/lib/prefs/ApiKeyPref.svelte" 'Thunderstore API token' 'Thunderstore API 令牌'
 replace_text "gale/src/lib/prefs/ApiKeyPref.svelte" "Thunderstore API token to use for modpack publishing. Once this is set, you will <b>not</b> be able\n\(\t\+\)to view the token again." "用于发布整合包的 Thunderstore API 密钥。设置完后，你将<b>无法</b>再次查看该密钥。" 1
 replace_text "gale/src/lib/prefs/ApiKeyPref.svelte" 'Click to override token' '单击来变更令牌'
 replace_text "gale/src/lib/prefs/ApiKeyPref.svelte" 'Not set' '未设置'
+replace_text "gale/src/lib/prefs/ApiKeyPref.svelte" 'Thunderstore API token' 'Thunderstore API 令牌'
 replace_text "gale/src/lib/prefs/CustomArgsPref.svelte" "Set custom launch arguments" "设置自定义启动参数"
 replace_text "gale/src/lib/prefs/CustomArgsPref.svelte" "Allows you to add custom arguments to the launch command. Depending on <b>Launch mode</b>," "允许您为启动命令添加自定义参数。根据<b>启动模式</b>，"
 replace_text "gale/src/lib/prefs/CustomArgsPref.svelte" "these are either ran against the game or launcher executable." "这些参数将针对游戏或游戏平台的可执行文件运行。"
