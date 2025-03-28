@@ -14,6 +14,8 @@ const dropdowns: Record<string, string> = {
 	'NSFW': '不宜内容',
 	'Enabled': '已启用',
 	'Disabled': '已禁用',
+	'Launcher': '启动器启动',
+	'Direct': '直接启动',
 	'Red': '红色',
 	'Orange': '橙色',
 	'Amber': '琥珀色',
@@ -30,12 +32,22 @@ const dropdowns: Record<string, string> = {
 	'Purple': '紫色',
 	'Fuchsia': '紫红色',
 	'Pink': '粉色',
-	'Rose': '玫瑰色'
+	'Rose': '玫瑰色',
+	'Slate': '板岩色',
+	'Gray': '灰色',
+	'Zinc': '锌色',
+	'Neutral': '中性色',
+	'Stone': '石色'
 };
 
 const menubar: Record<string, string> = {
 	'Rename': '重命名',
 	'Duplicate': '复制'
+}
+
+const colorPref: Record<string, string> = {
+	'Accent': '强调',
+	'Primary': '主'
 }
 
 export function translate_dropdowns(text: string): string {
@@ -44,4 +56,8 @@ export function translate_dropdowns(text: string): string {
 
 export function translate_menubar(text: string): string {
 	return menubar[text] || text;
+}
+
+export function translate_color_pref(text: string): string {
+	return colorPref[text] || text;
 }

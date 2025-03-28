@@ -33,6 +33,13 @@ replace_text() {
 
 cp -vr merge/* gale || exit 1
 
+# replace update keys & url
+replace_text "gale/src-tauri/tauri.conf.json" "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDNDRkNCMzE4NDIyOTQ1QjQKUldTMFJTbENHTFA4UE9Fd1RocjRDRm9uVmdiUlUxdmw1ZEwvaXRJZW45VFVSeXozUkYxaUFmZEsK" "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEFFMzRDNkRBRjQyM0YwNDUKUldSRjhDUDAyc1kwcnVCOUpnd3hIUkVEU2l5TXRlRm1Uc0NQWFZMQjhZa2ZJRVlkaXk5NGpaSWMK"
+replace_text "gale/src-tauri/tauri.conf.json" "https://gist.githubusercontent.com/Kesomannen/58b4f08009e7b7b5baaea253ebccb94d/raw/" "https://ghfast.top/https://gist.github.com/SummonHIM/48ae7ddf5b7bd612ed2108b2f94b4eb9/raw/gale-latest.json"
+
+# rust
+replace_text "gale/src-tauri/src/thunderstore/fetch.rs" "Fetching mods from Thunderstore..." "正在从 Thunderstore 中获取模组…"
+
 replace_text "gale/src/lib/components/ConfirmPopup.svelte" "}}>Cancel</BigButton" "}}>取消</BigButton"
 replace_text "gale/src/lib/components/Dropdown.svelte" "from '\$lib/transitions';" "from '\$lib/transitions';\n\timport { translate_dropdowns } from '\$lib/chinese';"
 replace_text "gale/src/lib/components/Dropdown.svelte" "getLabel(item)" "translate_dropdowns(getLabel(item))"
@@ -62,7 +69,7 @@ replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "Choose profile" "�
 replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "Which existing profile to overwrite with the imported one." "来用于覆盖当前存在的整合包。"
 replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "mods to install" "个模组需要安装"
 replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "Advanced options" "高级选项"
-replace_text "gale/src/lib/import/ImportProfilePopup.svelte" 'text="Import all files"' 'text="导入所有文件"'
+replace_text "gale/src/lib/import/ImportProfilePopup.svelte" '<Label>Import all files</Label>' '<Label>导入所有文件</Label>'
 replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "Import all files found in the profile, instead of just well-known config file formats." "将配置文件夹中找到的所有文件导入，而不仅仅是常见的配置文件格式。"
 replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "This is unsafe and can let an attacker install malware on your system." "这是一种不安全的操作，可能会让攻击者在你的系统上安装恶意软件。"
 replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "Only enable this for trusted profiles!" "仅在信任的配置文件中启用此功能！"
@@ -82,6 +89,7 @@ replace_text "gale/src/lib/import/ImportR2Popup.svelte" "Existing profiles with 
 replace_text "gale/src/lib/import/ImportR2Popup.svelte" "Do not close Gale while the import is in progress." "导入过程中请不要关闭 Gale。 "
 replace_text "gale/src/lib/import/ImportR2Popup.svelte" ">Cancel</BigButton>" ">取消</BigButton>"
 replace_text "gale/src/lib/import/ImportR2Popup.svelte" ">Import</BigButton>" ">导入</BigButton>"
+replace_text "gale/src/lib/menu/AboutPopup.svelte" 'title="About"' 'title="关于"'
 replace_text "gale/src/lib/menu/AboutPopup.svelte" "Version {version}" "版本 {version}"
 replace_text "gale/src/lib/menu/AboutPopup.svelte" "Changelog</Link>" "变更日志</Link>"
 replace_text "gale/src/lib/menu/AboutPopup.svelte" "Privacy Policy" "隐私政策"
@@ -139,7 +147,7 @@ replace_text "gale/src/lib/menu/Menubar.svelte" 'label="Help"' 'label="帮助"'
 replace_text "gale/src/lib/menu/Menubar.svelte" "Report a bug" "报告 Bug"
 replace_text "gale/src/lib/menu/Menubar.svelte" "Join discord server" "加入 Discord 服务器"
 replace_text "gale/src/lib/menu/Menubar.svelte" "About Gale" "关于 Gale"
-replace_text "gale/src/lib/menu/Menubar.svelte" "{capitalize(profileOperation)} profile" "{capitalize(profileOperation)} 整合包"
+replace_text "gale/src/lib/menu/Menubar.svelte" "{capitalize(profileOperation)} profile" "{capitalize(profileOperation)}整合包"
 replace_text "gale/src/lib/menu/Menubar.svelte" "Enter a name for the duplicated profile:" "为欲复制的整合包起一个新名字："
 replace_text "gale/src/lib/menu/Menubar.svelte" "Enter a new name for the profile:" "为整合包起一个新名字："
 replace_text "gale/src/lib/menu/Menubar.svelte" "Enter name..." "请输入名字…"
@@ -148,8 +156,11 @@ replace_text "gale/src/lib/menu/Menubar.svelte" ">Cancel</BigButton>" ">取消</
 replace_text "gale/src/lib/menu/Menubar.svelte" "from '\$lib/util';" "from '\$lib/util';\n\timport { translate_menubar } from '\$lib/chinese';"
 replace_text "gale/src/lib/menu/Menubar.svelte" "capitalize(profileOperation)" "translate_menubar(capitalize(profileOperation))"
 replace_text "gale/src/lib/menu/NewProfilePopup.svelte" "Create new profile" "创建新整合包"
-replace_text "gale/src/lib/menu/NewProfilePopup.svelte" "Choose a name for the new profile:" "为新整合包起一个新名字："
+replace_text "gale/src/lib/menu/NewProfilePopup.svelte" "Choose a name for the new profile" "为新整合包起一个新名字"
 replace_text "gale/src/lib/menu/NewProfilePopup.svelte" "Enter name..." "请输入名字…"
+replace_text "gale/src/lib/menu/NewProfilePopup.svelte" "Use custom path" "使用自定义路径"
+replace_text "gale/src/lib/menu/NewProfilePopup.svelte" 'label="Custom path"' 'label="自定义路径"'
+replace_text "gale/src/lib/menu/NewProfilePopup.svelte" "The path of the profile." "自定义整合包的存放位置。"
 replace_text "gale/src/lib/menu/NewProfilePopup.svelte" ">Create</BigButton>" ">创建</BigButton>"
 replace_text "gale/src/lib/menu/Updater.svelte" "Unknown error" "未知错误"
 replace_text "gale/src/lib/menu/Updater.svelte" "Failed to update Gale" "更新 Gale 失败"
@@ -214,8 +225,8 @@ replace_text "gale/src/lib/modlist/UpdateAllBanner.svelte" "Select which mods to
 replace_text "gale/src/lib/modlist/UpdateAllBanner.svelte" 'title="Update all"' 'title="全部更新"'
 replace_text "gale/src/lib/modlist/UpdateAllBanner.svelte" "Ignore this update in the 'Update all' list." "在‘全部更新’中忽略该模组的更新。"
 replace_text "gale/src/lib/modlist/UpdateAllBanner.svelte" "Update mods" "更新模组"
-replace_text "gale/src/lib/prefs/AccentColorPref.svelte" "Accent color" "强调色"
-replace_text "gale/src/lib/prefs/AccentColorPref.svelte" "Changes the color of highlighted elements, such as buttons and checkboxes." "更改突出显示元素（例如按钮和复选框）的颜色。"
+replace_text "gale/src/lib/prefs/ColorPref.svelte" "import { capitalize } from '\$lib/util';" "import { capitalize } from '\$lib/util';\n\timport { translate_color_pref } from '\$lib/chinese';"
+replace_text "gale/src/lib/prefs/ColorPref.svelte" "{capitalize(category)} color" "{translate_color_pref(capitalize(category))}色调"
 replace_text "gale/src/lib/prefs/ApiKeyPopup.svelte" "Set thunderstore API token" "设置 thunderstore API 令牌"
 replace_text "gale/src/lib/prefs/ApiKeyPopup.svelte" "Enter your Thunderstore API token below, or leave blank to clear the current one. This token is\n\(\t\+\)used to publish modpacks to Thunderstore, and will be stored securely on your computer." "在下方输入您的 Thunderstore API 令牌，或者留空以清除当前令牌。此令牌用于将整合包发布到 Thunderstore。并且令牌会安全地存储在您的计算机上。" 1
 replace_text "gale/src/lib/prefs/ApiKeyPopup.svelte" "Once set, you will <b>not</b> be able to view the token again." "设置后，您将<b>无法</b>再次查看该令牌。"
@@ -259,6 +270,8 @@ replace_text "gale/src/lib/util.ts" "' minutes'" "'分钟'"
 replace_text "gale/src/lib/util.ts" "' seconds'" "'秒'"
 replace_text "gale/src/routes/browse/+page.svelte" "Already installed" "已安装"
 replace_text "gale/src/routes/browse/+page.svelte" '\tInstall' '\t安装' 1
+replace_text "gale/src/routes/browse/+page.svelte" "No matching mods found" "未找到相关模组"
+replace_text "gale/src/routes/browse/+page.svelte" "Try to adjust your search query/filters" "尝试调整你的过滤和搜索"
 replace_text "gale/src/routes/config/+page.svelte" "Loading config..." "正在加载配置文件…"
 replace_text "gale/src/routes/config/+page.svelte" "No config files found" "未找到配置文件"
 replace_text "gale/src/routes/config/+page.svelte" "Search for files..." "搜索文件…"
@@ -348,7 +361,7 @@ replace_text "gale/src/routes/+page.svelte" "label: 'Show dependants'" "label: '
 replace_text "gale/src/routes/+page.svelte" "label: 'Open folder'" "label: '打开文件夹'"
 replace_text "gale/src/routes/+page.svelte" "Update to" "更新到"
 replace_text "gale/src/routes/+page.svelte" "The following {unknownMods.length === 1 ? 'mod' : 'mods'} could not be found:" "无法找到以下模组："
-replace_text "gale/src/routes/+page.svelte" "Uninstall them?" "全部卸载？"
+replace_text "gale/src/routes/+page.svelte" "Uninstall {unknownMods.length === 1 ? 'it' : 'them'}?" "{unknownMods.length === 1 ? '是否' : '全部'}卸载？"
 replace_text "gale/src/routes/+page.svelte" "No dependants found" "未找到依赖"
 replace_text "gale/src/routes/+page.svelte" 'title="Dependants of \(.\+\)"' 'title="\1 的依赖关系"'
 replace_text "gale/src/routes/+page.svelte" "Confirm uninstallation" "确认卸载"
@@ -360,7 +373,7 @@ replace_text "gale/src/routes/+page.svelte" "The following mods depend on %s and
 replace_text "gale/src/routes/+page.svelte" "Confirm enabling" "确认启用"
 replace_text "gale/src/routes/+page.svelte" 'verb="Enable"' 'verb="启用"'
 replace_text "gale/src/routes/+page.svelte" "%s depends on the following disabled mods, and will likely not work if any of them are disabled:" "%s 依赖于以下被禁用的模组，如果其中任何一个被禁用则可能无法正常工作："
-
-# replace update keys & url
-replace_text "gale/src-tauri/tauri.conf.json" "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDNDRkNCMzE4NDIyOTQ1QjQKUldTMFJTbENHTFA4UE9Fd1RocjRDRm9uVmdiUlUxdmw1ZEwvaXRJZW45VFVSeXozUkYxaUFmZEsK" "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEFFMzRDNkRBRjQyM0YwNDUKUldSRjhDUDAyc1kwcnVCOUpnd3hIUkVEU2l5TXRlRm1Uc0NQWFZMQjhZa2ZJRVlkaXk5NGpaSWMK"
-replace_text "gale/src-tauri/tauri.conf.json" "https://gist.githubusercontent.com/Kesomannen/58b4f08009e7b7b5baaea253ebccb94d/raw/" "https://ghfast.top/https://gist.github.com/SummonHIM/48ae7ddf5b7bd612ed2108b2f94b4eb9/raw/gale-latest.json"
+replace_text "gale/src/routes/+page.svelte" "No mods installed" "未有安装模组"
+replace_text "gale/src/routes/+page.svelte" "Click to browse Thunderstore" "单击来访问 Thunderstore"
+replace_text "gale/src/routes/+page.svelte" "No matching mods found in profile" "未在整合包中找到该模组"
+replace_text "gale/src/routes/+page.svelte" "Try to adjust your search query/filters" "尝试调整你的过滤和搜索"
