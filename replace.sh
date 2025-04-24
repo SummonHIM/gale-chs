@@ -81,7 +81,7 @@ replace_text "gale/src/lib/import/ExportCodePopup.svelte" "Export complete! The 
 replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "Are you sure you want to override \(.\+\)?" "真的确定要覆盖 \1？"
 replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "Import profile" "导入整合包"
 replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "Create new" "创建新整合包"
-replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "Overwrite existing" "覆盖现有的"
+replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "Overwrite existing" "覆盖现有整合包"
 replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "Profile name" "整合包名称"
 replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "A unique name for the imported profile\." "为已导入的整合包起一个独一无二的名字。"
 replace_text "gale/src/lib/import/ImportProfilePopup.svelte" "Profile \(.\+\) already exists!" "整合包 \1 已存在！"
@@ -120,7 +120,7 @@ replace_text "gale/src/lib/menu/Contextbar.svelte" "Deleted profile \(.\+\)\." "
 replace_text "gale/src/lib/menu/Contextbar.svelte" "Launch game" "启动游戏"
 replace_text "gale/src/lib/menu/Contextbar.svelte" "Loading\.\.\." "加载中…"
 replace_text "gale/src/lib/menu/Contextbar.svelte" "New profile" "创建整合包"
-replace_text "gale/src/lib/menu/Contextbar.svelte" 'title="Launching' 'title="正在启动'
+replace_text "gale/src/lib/menu/Contextbar.svelte" 'title="Launching \(.\+\)\.\.\."' 'title="正在启动 \1…"'
 replace_text "gale/src/lib/menu/Contextbar.svelte" "If the game is taking a while to start, it's probably because Steam is starting up\." "如果游戏迟迟未启动，则可能是 Steam 正在启动。"
 replace_text "gale/src/lib/menu/Contextbar.svelte" "Select game to mod" "选择需要管理模组的游戏"
 replace_text "gale/src/lib/menu/DependantsPopup.svelte" "{verb}\n\(\t\+\){name} only" "仅{verb} {name}" 1
@@ -132,8 +132,9 @@ replace_text "gale/src/lib/menu/Menubar.svelte" "Select the file to import" "选
 replace_text "gale/src/lib/menu/Menubar.svelte" "Profile file" "整合包文件"
 replace_text "gale/src/lib/menu/Menubar.svelte" "Select the folder to export the profile to" "选择欲将整合包导出的文件夹"
 replace_text "gale/src/lib/menu/Menubar.svelte" "\${\(.\+\) ? 'Enabled' : 'Disabled'} \${count} mods." "\${\1 ? '已启用' : '已禁用'} \${count} 个模组。"
-replace_text "gale/src/lib/menu/Menubar.svelte" "Renamed profile to" "已将整合包重命名为"
-replace_text "gale/src/lib/menu/Menubar.svelte" "Duplicated profile to" "已将整合包复制为"
+replace_text "gale/src/lib/menu/Menubar.svelte" "Renamed profile to \(.\+\)\." "已将整合包重命名为 \1。"
+replace_text "gale/src/lib/menu/Menubar.svelte" "Duplicated profile to \(.\+\)\." "已将整合包复制为 \1。"
+replace_text "gale/src/lib/menu/Menubar.svelte" "Created desktop shortcut for \(.\+\)\." "已为 \1 创建桌面快捷方式。"
 replace_text "gale/src/lib/menu/Menubar.svelte" "Are you sure you want to uninstall all disabled mods?" "你真的确定要卸载所有已禁用的模组吗？"
 replace_text "gale/src/lib/menu/Menubar.svelte" "Uninstalled \(.\+\) disabled mods." "已卸载 \1 个禁用的模组。"
 replace_text "gale/src/lib/menu/Menubar.svelte" "Copied launch arguments to clipboard." "已复制启动参数到剪切板。"
@@ -159,6 +160,7 @@ replace_text "gale/src/lib/menu/Menubar.svelte" "Copy launch arguments" "复制�
 replace_text "gale/src/lib/menu/Menubar.svelte" "Enable all mods" "启用所有模组"
 replace_text "gale/src/lib/menu/Menubar.svelte" "Disable all mods" "禁用所有模组"
 replace_text "gale/src/lib/menu/Menubar.svelte" "Uninstall disabled mods" "卸载已禁用模组"
+replace_text "gale/src/lib/menu/Menubar.svelte" "Create desktop shortcut" "创建桌面快捷方式"
 replace_text "gale/src/lib/menu/Menubar.svelte" 'label="Import"' 'label="导入"'
 replace_text "gale/src/lib/menu/Menubar.svelte" "\.\.\.profile from code" "从代码导入整合包"
 replace_text "gale/src/lib/menu/Menubar.svelte" "\.\.\.profile from file" "从文件导入整合包"
@@ -277,9 +279,9 @@ replace_text "gale/src/lib/prefs/CustomArgsPref.svelte" "Only pass one argument 
 replace_text "gale/src/lib/prefs/CustomArgsPref.svelte" "Enter new argument\.\.\." "请输入新参数…"
 replace_text "gale/src/lib/prefs/LaunchModePref.svelte" "Launch mode" "启动模式"
 replace_text "gale/src/lib/prefs/LaunchModePref.svelte" "Determines how the game is launched\." "确定游戏的启动方式。"
-replace_text "gale/src/lib/prefs/LaunchModePref.svelte" "Launches via the specified platform\." "从游戏平台中启动游戏"
+replace_text "gale/src/lib/prefs/LaunchModePref.svelte" "<b>Launcher:</b> Launches via the specified platform\." "<b>启动器启动：</b> 从游戏平台中启动游戏。"
 replace_text "gale/src/lib/prefs/LaunchModePref.svelte" "This is required for some games that, for\n\(\t\+\)example, require Steam to be running\." "例如需要 Steam 运行的游戏。某些游戏需要从 Steam 中启动。" 1
-replace_text "gale/src/lib/prefs/LaunchModePref.svelte" "Launches the game directly from the executable\. Allows you to launch multiple instances\n\(\t\+\)at once\." "直接从游戏的可执行文件启动游戏。这将允许一次性启动多个游戏进程。" 1
+replace_text "gale/src/lib/prefs/LaunchModePref.svelte" "<b>Direct:</b> Launches the game directly from the executable\. Allows you to launch multiple instances\n\(\t\+\)at once\." "<b>直接启动：</b> 直接从游戏的可执行文件启动游戏。这将允许一次性启动多个游戏进程。" 1
 replace_text "gale/src/lib/prefs/LaunchModePref.svelte" "Number of instances" "进程数量上限"
 replace_text "gale/src/lib/prefs/LaunchModePref.svelte" "How many instances of the game to launch at once\. Only available in <b>Direct</b> mode\." "设置一次性启动多个游戏进程的数量上限。仅在<b>直接启动</b>模式有效。"
 replace_text "gale/src/lib/prefs/LaunchModePref.svelte" "Interval between launches" "游戏启动间隔"
