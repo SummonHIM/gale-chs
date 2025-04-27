@@ -112,7 +112,7 @@ replace_text "gale/src/lib/menu/AboutPopup.svelte" 'title="About"' 'title="关�
 replace_text "gale/src/lib/menu/AboutPopup.svelte" "Version {version}" "版本 {version}"
 replace_text "gale/src/lib/menu/AboutPopup.svelte" "Changelog</Link>" "变更日志</Link>"
 replace_text "gale/src/lib/menu/AboutPopup.svelte" "Privacy Policy" "隐私政策"
-replace_text "gale/src/lib/menu/AboutPopup.svelte" "GitHub</Link>\n\(\t\+\)</div>" 'GitHub</Link>\n\1</div>\n\1<div class="mt-1 flex items-center gap-2">\n\1\t<Icon icon="mdi:github" class="text-xl text-white" />\n\1\t<Link href="https://github.com/SummonHIM/gale-chs">汉化 GitHub</Link>\n\1</div>' 1
+replace_text "gale/src/lib/menu/AboutPopup.svelte" "GitHub</Link>\n\(\t\+\)</div>" 'GitHub</Link>\n\1</div>\n\1<div class="mt-1 flex items-center gap-2">\n\1\t<Icon icon="mdi:ideogram-cjk-variant" class="text-xl text-white" />\n\1\t<Link href="https://github.com/SummonHIM/gale-chs">GitHub</Link>\n\1</div>' 1
 replace_text "gale/src/lib/menu/AboutPopup.svelte" ">Donate</Link>" ">赞赏</Link>"
 replace_text "gale/src/lib/menu/AboutPopup.svelte" "Check for updates" "检查更新"
 replace_text "gale/src/lib/menu/AboutPopup.svelte" "Checking for updates\.\.\." "正在检查更新…"
